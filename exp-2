@@ -1,0 +1,59 @@
+calculator.java
+
+class Calculator {
+    // Attributes (for demonstration in parameterized constructor)
+    int num1, num2;
+
+    // Default Constructor (Constructor Overloading)
+    Calculator() {
+        System.out.println("Welcome to Calculator!");
+    }
+
+    // Parameterized Constructor (Constructor Overloading)
+    Calculator(int a, int b) {
+        num1 = a;
+        num2 = b;
+        int sum = num1 + num2;
+        System.out.println("Sum of " + num1 + " and " + num2 + " is: " + sum);
+    }
+
+    // Method Overloading: add() with no parameters
+    void add() {
+        int a = 5, b = 10;
+        int sum = a + b;
+        System.out.println("Sum of " + a + " and " + b + " is: " + sum);
+    }
+
+    // Method Overloading: add() with two integer parameters
+    void add(int a, int b) {
+        int sum = a + b;
+        System.out.println("Sum of " + a + " and " + b + " is: " + sum);
+    }
+
+    // Method Overloading: add() with three float parameters
+    void add(float a, float b, float c) {
+        float sum = a + b + c;
+        System.out.println("Sum of " + a + ", " + b + ", and " + c + " is: " + sum);
+    }
+
+    // Main method to test the class
+    public static void main(String[] args) {
+        Calculator calc1 = new Calculator();           // Calls default constructor
+        Calculator calc2 = new Calculator(10, 20);     // Calls parameterized constructor
+
+        calc1.add();                                   // No-parameter add()
+        calc1.add(15, 25);                             // Two-integer-parameter add()
+        calc1.add(1.5f, 2.5f, 3.0f);                   // Three-float-parameter add()
+    }
+
+
+
+
+    output-
+    Welcome to Calculator!
+Sum of 10 and 20 is: 30
+Sum of 5 and 10 is: 15
+Sum of 15 and 25 is: 40
+Sum of 1.5, 2.5, and 3.0 is: 7.0
+
+=== Code Execution Successful ===
