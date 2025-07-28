@@ -1,0 +1,237 @@
+Administrator.java
+
+class Person {
+    String name;
+    int age;
+
+    void setPersonDetails(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void displayPersonDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+// Subclass
+class Administrator extends Person {
+    String department;
+
+    void setAdministratorDetails(String n, int a, String d) {
+        setPersonDetails(n, a);
+        department = d;
+    }
+
+    void displayAdministratorDetails() {
+        displayPersonDetails();
+        System.out.println("Department: " + department);
+    }
+}
+
+// Main class to run the program
+public class Main {
+    public static void main(String[] args) {
+        Administrator admin = new Administrator();
+        admin.setAdministratorDetails("Krutika", 18, "Artificial Intelligence ");
+        admin.displayAdministratorDetails();
+    }
+}
+
+
+output:-
+Name: Krutika
+Age: 18
+Department: Artificial Intelligence 
+
+
+
+GraduateStudent.java
+
+// Superclass
+class Student {
+    String name;
+    int age;
+    String course;
+    int rollNumber;
+
+    void setStudentDetails(String n, int a, String c, int r) {
+        name = n;
+        age = a;
+        course = c;
+        rollNumber = r;
+    }
+
+    void displayStudentDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Course: " + course);
+        System.out.println("Roll Number: " + rollNumber);
+    }
+}
+
+// Subclass
+class GraduateStudent extends Student {
+    int graduationYear;
+
+    void setGraduateStudentDetails(String n, int a, String c, int r, int y) {
+        setStudentDetails(n, a, c, r); // Call superclass method
+        graduationYear = y;
+    }
+
+    // Display graduate student details 
+    void displayGraduateStudentDetails() {
+        displayStudentDetails(); // Call superclass method
+        System.out.println("Graduation Year: " + graduationYear);
+    }
+}
+
+// Main class to run
+public class Main {
+    public static void main(String[] args) {
+        GraduateStudent grad = new GraduateStudent();
+        grad.setGraduateStudentDetails("Krutika", 18, "artificial intelligence",18, 2028);
+        grad.displayGraduateStudentDetails();
+    }
+}
+
+output:-
+Name: Krutika
+Age: 18
+Course: artificial intelligence
+Roll Number: 18
+Graduation Year: 2028
+
+
+Main.java
+
+// Superclass Person
+class Person {
+    String name;
+    int age;
+
+    void setPersonDetails(String n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void displayPersonDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+    }
+}
+
+// Student class
+class Student extends Person {
+    String course;
+    int rollNumber;
+
+    void setStudentDetails(String n, int a, String c, int r) {
+        setPersonDetails(n, a); // From Person class
+        course = c;
+        rollNumber = r;
+    }
+
+    void displayStudentDetails() {
+        displayPersonDetails(); // From Person class
+        System.out.println("Course: " + course);
+        System.out.println("Roll Number: " + rollNumber);
+    }
+}
+
+// GraduateStudent class
+class GraduateStudent extends Student {
+    int graduationYear;
+
+    void setGraduateStudentDetails(String n, int a, String c, int r, int y) {
+        setStudentDetails(n, a, c, r);
+        graduationYear = y;
+    }
+
+    void displayGraduateStudentDetails() {
+        displayStudentDetails();
+        System.out.println("Graduation Year: " + graduationYear);
+    }
+}
+
+// Teacher class
+class Teacher extends Person {
+    String subject;
+
+    void setTeacherDetails(String n, int a, String s) {
+        setPersonDetails(n, a);
+        subject = s;
+    }
+
+    void displayTeacherDetails() {
+        displayPersonDetails();
+        System.out.println("Subject: " + subject);
+    }
+}
+
+// Administrator class
+class Administrator extends Person {
+    String department;
+
+    void setAdministratorDetails(String n, int a, String d) {
+        setPersonDetails(n, a);
+        department = d;
+    }
+
+    void displayAdministratorDetails() {
+        displayPersonDetails();
+        System.out.println("Department: " + department);
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.setStudentDetails("Krutika", 18, "B.E", 18);
+        System.out.println("Student Details:");
+        s.displayStudentDetails();
+        System.out.println();
+
+        GraduateStudent gs = new GraduateStudent();
+        gs.setGraduateStudentDetails("Dnyaneshwari", 22, "M.E",13, 2023);
+        System.out.println("Graduate Student Details:");
+        gs.displayGraduateStudentDetails();
+        System.out.println();
+
+        Teacher t = new Teacher();
+        t.setTeacherDetails("Siddhesh", 35, "Mathematics");
+        System.out.println("Teacher Details:");
+        t.displayTeacherDetails();
+        System.out.println();
+
+        Administrator a = new Administrator();
+        a.setAdministratorDetails("Nivrutti", 40, "HR");
+        System.out.println("Administrator Details:");
+        a.displayAdministratorDetails();
+    }
+}
+
+output:-Student Details:
+Name: Krutika
+Age: 18
+Course: B.E
+Roll Number: 18
+
+Graduate Student Details:
+Name: Dnyaneshwari
+Age: 22
+Course: M.E
+Roll Number: 13
+Graduation Year: 2023
+
+Teacher Details:
+Name: Siddhesh
+Age: 35
+Subject: Mathematics
+
+Administrator Details:
+Name: Nivrutti
+Age: 40
+Department: HR
